@@ -9,4 +9,4 @@ require mathlib from git
 
 @[default_target]
 lean_lib EconLib where
-  roots := #[`Basic]
+  roots := #[`EconLib]
