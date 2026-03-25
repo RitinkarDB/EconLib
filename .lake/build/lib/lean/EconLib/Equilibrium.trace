@@ -1,8 +1,8 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["b3c04b357ed51a73.olean"],
-  "i": "8056efacce8a440b.ilean",
+ {"o": ["7510c2e4de1fec10.olean"],
+  "i": "a3cafe57dbe3298c.ilean",
   "c": "89a4f6a8bddf0dea.c"},
  "log":
  [{"message":
@@ -23,7 +23,7 @@
   ["Lean 4.28.0, commit 7e01a1bf5c70fc6167d49c345d3bf80596e9a79b",
    "a96bc04a2e5e9630"],
   ["/Users/ritinkardasbhaumik/EconLib/EconLib/Equilibrium.lean",
-   "27abc4a7e317caf7"],
+   "6d4b052b2a4d79db"],
   ["options", "00000000000006bb"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "b53f098622a641db"}
+ "depHash": "50d4437efd550532"}
