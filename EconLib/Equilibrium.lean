@@ -38,6 +38,13 @@ as unilateral deviations from profile `σ`.
 abbrev FeasibleDeviation :=
   (σ : M.Profile) → (i : M.Agent) → Set (M.Action i)
 
+/--
+A predicate saying whether a profile itself is feasible/admissible.
+This is useful in constrained-choice settings.
+-/
+abbrev ProfileFeasible :=
+  M.Profile → Prop
+
 /-- Agent `i` has a profitable feasible deviation from `σ` to `x`. -/
 def ProfitableDeviation
     (feasible : M.FeasibleDeviation)
@@ -52,11 +59,25 @@ def IsLocallyOptimal
     x ∈ feasible σ i →
     M.utility σ i ≥ M.utility (M.deviate σ i x) i
 
-/-- A profile is an equilibrium if every agent is locally optimal. -/
+/--
+A profile is an equilibrium if every agent is locally optimal.
+This is the basic no-profitable-feasible-deviation notion.
+-/
 def IsEquilibrium
     (feasible : M.FeasibleDeviation)
     (σ : M.Profile) : Prop :=
   ∀ i : M.Agent, M.IsLocallyOptimal feasible σ i
+
+/--
+A stronger equilibrium notion requiring both:
+- the profile itself is feasible
+- every agent is locally optimal
+-/
+def IsFeasibleEquilibrium
+    (profileFeasible : M.ProfileFeasible)
+    (feasible : M.FeasibleDeviation)
+    (σ : M.Profile) : Prop :=
+  profileFeasible σ ∧ M.IsEquilibrium feasible σ
 
 theorem isEquilibrium_iff_no_profitable_deviation
     (feasible : M.FeasibleDeviation)
