@@ -156,3 +156,7 @@ This repository is currently tied to a PhD chapter on formalising static microec
 
 Ritinkar Das Bhaumik
 
+## License
+
+This project is licensed under the Apache License 2.0.
+See the `LICENSE` file for details.
