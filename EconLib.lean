@@ -1,7 +1,7 @@
 import EconLib.Foundations.Basic
 import EconLib.Equilibrium.Basic
 import EconLib.GameTheory.Basic
-import Econlib.GameTheory.Dominance
+import EconLib.GameTheory.Dominance
 import EconLib.Choice.Basic
 import EconLib.Examples.PrisonersDilemma
 import EconLib.Examples.BattleOfTheSexes
