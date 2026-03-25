@@ -1,4 +1,4 @@
-import EconLib.GameTheory.Basic 
+import EconLib.GameTheory.Basic
 
 namespace UtilityModel
 
@@ -21,6 +21,17 @@ def ActionStrictlyDominatesAt
     (σ : M.Profile) (i : M.Agent) : Prop :=
   ∀ x : M.Action i, x ≠ σ i →
     M.utility σ i > M.utility (M.deviate σ i x) i
+
+theorem actionWeaklyDominatesAt_of_actionStrictlyDominatesAt
+    (σ : M.Profile)
+    (i : M.Agent)
+    (h : M.ActionStrictlyDominatesAt σ i) :
+    M.ActionWeaklyDominatesAt σ i := by
+  intro x
+  by_cases hx : x = σ i
+  · subst hx
+    simp [UtilityModel.deviate, EconModel.deviate]
+  · exact le_of_lt (h x hx)
 
 /--
 If every player's current action weakly dominates all unilateral alternatives

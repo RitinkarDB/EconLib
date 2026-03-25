@@ -14,6 +14,15 @@ def IsPureNash (σ : M.Profile) : Prop :=
   ∀ i (x : M.Action i),
     M.utility σ i ≥ M.utility (M.deviate σ i x) i
 
+/--
+At profile `σ`, player `i` is best-responding if no unilateral deviation
+yields higher utility.
+-/
+def IsBestResponseAt
+    (σ : M.Profile) (i : M.Agent) : Prop :=
+  ∀ x : M.Action i,
+    M.utility σ i ≥ M.utility (M.deviate σ i x) i
+
 theorem isLocallyOptimal_unconstrained_iff
     (σ : M.Profile) (i : M.Agent) :
     M.IsLocallyOptimal M.unconstrainedFeasible σ i ↔
@@ -38,6 +47,22 @@ theorem isPureNash_iff_no_profitable_unilateral_deviation
     (σ : M.Profile) :
     M.IsPureNash σ ↔
     ∀ i x, M.utility (M.deviate σ i x) i ≤ M.utility σ i := by
+  constructor
+  · intro h i x
+    exact h i x
+  · intro h i x
+    exact h i x
+
+theorem isPureNash_of_isBestResponseAt
+    (σ : M.Profile)
+    (h : ∀ i : M.Agent, M.IsBestResponseAt σ i) :
+    M.IsPureNash σ := by
+  intro i x
+  exact h i x
+
+theorem isPureNash_iff_forall_isBestResponseAt
+    (σ : M.Profile) :
+    M.IsPureNash σ ↔ ∀ i : M.Agent, M.IsBestResponseAt σ i := by
   constructor
   · intro h i x
     exact h i x

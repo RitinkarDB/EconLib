@@ -1,7 +1,7 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["a893b21e5cf63399.olean"],
+ {"o": ["bb4f48ad03d84b37.olean"],
   "i": "170eeba5e7522c3c.ilean",
   "c": "cd262bc1197dc876.c"},
  "log":
@@ -14,8 +14,8 @@
      [["EconLib/EconLib:extraDep", [["@EconLib:extraDep", "00000000000006bb"]]],
       ["imports",
        [["EconLib.GameTheory.Basic transitive imports (legacy)",
-         "4f31d4e01aff12a4"],
-        ["EconLib.GameTheory.Basic:importAllArts", "d5014ebc608eb8ab"]]]]],
+         "044f6c4251d6c7c1"],
+        ["EconLib.GameTheory.Basic:importAllArts", "f6f0253b904a4f9e"]]]]],
     ["libs",
      [["import dynlibs", "00000000000006bb"],
       ["package external libraries", "00000000000006bb"],
@@ -27,4 +27,4 @@
    "93477e62024a02b5"],
   ["options", "00000000000006bb"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "8b9288377bf1f2d4"}
+ "depHash": "3ef2328440145439"}

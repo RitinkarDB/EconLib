@@ -90,6 +90,14 @@ theorem isEquilibrium_iff_no_profitable_deviation
   · intro h i x hx
     exact le_of_not_gt (fun hgt => h i x ⟨hx, hgt⟩)
 
+theorem isLocallyOptimal_of_isEquilibrium
+    (feasible : M.FeasibleDeviation)
+    (σ : M.Profile)
+    (h : M.IsEquilibrium feasible σ)
+    (i : M.Agent) :
+    M.IsLocallyOptimal feasible σ i := by
+  exact h i
+
 theorem isEquilibrium_of_isFeasibleEquilibrium
     (profileFeasible : M.ProfileFeasible)
     (feasible : M.FeasibleDeviation)
@@ -98,6 +106,14 @@ theorem isEquilibrium_of_isFeasibleEquilibrium
     M.IsEquilibrium feasible σ := by
   intro h
   exact h.2
+
+theorem profileFeasible_of_isFeasibleEquilibrium
+    (profileFeasible : M.ProfileFeasible)
+    (feasible : M.FeasibleDeviation)
+    (σ : M.Profile)
+    (h : M.IsFeasibleEquilibrium profileFeasible feasible σ) :
+    profileFeasible σ := by
+  exact h.1
 
 theorem no_profitable_deviation_of_isEquilibrium
     (feasible : M.FeasibleDeviation)
@@ -112,6 +128,20 @@ theorem isEquilibrium_of_no_profitable_deviation
     (h : ∀ i x, ¬ M.ProfitableDeviation feasible σ i x) :
     M.IsEquilibrium feasible σ := by
   exact (M.isEquilibrium_iff_no_profitable_deviation feasible σ).mpr h
+
+theorem isFeasibleEquilibrium_iff_profileFeasible_and_no_profitable_deviation
+    (profileFeasible : M.ProfileFeasible)
+    (feasible : M.FeasibleDeviation)
+    (σ : M.Profile) :
+    M.IsFeasibleEquilibrium profileFeasible feasible σ ↔
+      profileFeasible σ ∧ ∀ i x, ¬ M.ProfitableDeviation feasible σ i x := by
+  constructor
+  · intro h
+    refine ⟨h.1, ?_⟩
+    exact (M.isEquilibrium_iff_no_profitable_deviation feasible σ).mp h.2
+  · intro h
+    refine ⟨h.1, ?_⟩
+    exact (M.isEquilibrium_iff_no_profitable_deviation feasible σ).mpr h.2
 
 end Deviation
 
