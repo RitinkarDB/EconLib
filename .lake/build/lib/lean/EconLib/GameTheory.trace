@@ -1,0 +1,29 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["95fd0916ac2f8d47.olean"],
+  "i": "9c610b82c7f11c17.ilean",
+  "c": "3c291e7fd6940209.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/Users/ritinkardasbhaumik/EconLib/.lake/packages/Cli/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/batteries/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/Qq/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/aesop/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/importGraph/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/plausible/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/mathlib/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/build/lib/lean /Users/ritinkardasbhaumik/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /Users/ritinkardasbhaumik/EconLib/EconLib/GameTheory.lean -o /Users/ritinkardasbhaumik/EconLib/.lake/build/lib/lean/EconLib/GameTheory.olean -i /Users/ritinkardasbhaumik/EconLib/.lake/build/lib/lean/EconLib/GameTheory.ilean -c /Users/ritinkardasbhaumik/EconLib/.lake/build/ir/EconLib/GameTheory.c --setup /Users/ritinkardasbhaumik/EconLib/.lake/build/ir/EconLib/GameTheory.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["EconLib.GameTheory:deps",
+   [["deps",
+     [["EconLib/EconLib:extraDep", [["@EconLib:extraDep", "00000000000006bb"]]],
+      ["imports",
+       [["EconLib.Equilibrium transitive imports (legacy)", "3a391beb0b7a0fd7"],
+        ["EconLib.Equilibrium:importAllArts", "c311a31934e3dc84"]]]]],
+    ["libs",
+     [["import dynlibs", "00000000000006bb"],
+      ["package external libraries", "00000000000006bb"],
+      ["module dynlibs", "00000000000006bb"],
+      ["module plugins", "00000000000006bb"]]]]],
+  ["Lean 4.28.0, commit 7e01a1bf5c70fc6167d49c345d3bf80596e9a79b",
+   "a96bc04a2e5e9630"],
+  ["/Users/ritinkardasbhaumik/EconLib/EconLib/GameTheory.lean",
+   "c000d7ae4e661a98"],
+  ["options", "00000000000006bb"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "00ba147302f67ccd"}

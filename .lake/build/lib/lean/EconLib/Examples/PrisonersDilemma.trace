@@ -1,0 +1,27 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["5cb80c5640a491df.olean"],
+  "i": "3ae4ddab438c884a.ilean",
+  "c": "8c55797d194f7eb2.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/Users/ritinkardasbhaumik/EconLib/.lake/packages/Cli/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/batteries/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/Qq/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/aesop/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/importGraph/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/plausible/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/mathlib/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/build/lib/lean /Users/ritinkardasbhaumik/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /Users/ritinkardasbhaumik/EconLib/EconLib/Examples/PrisonersDilemma.lean -o /Users/ritinkardasbhaumik/EconLib/.lake/build/lib/lean/EconLib/Examples/PrisonersDilemma.olean -i /Users/ritinkardasbhaumik/EconLib/.lake/build/lib/lean/EconLib/Examples/PrisonersDilemma.ilean -c /Users/ritinkardasbhaumik/EconLib/.lake/build/ir/EconLib/Examples/PrisonersDilemma.c --setup /Users/ritinkardasbhaumik/EconLib/.lake/build/ir/EconLib/Examples/PrisonersDilemma.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["EconLib.Examples.PrisonersDilemma:deps",
+   [["deps",
+     [["EconLib/EconLib:extraDep", [["@EconLib:extraDep", "00000000000006bb"]]],
+      ["imports", "00000000000006bb"]]],
+    ["libs",
+     [["import dynlibs", "00000000000006bb"],
+      ["package external libraries", "00000000000006bb"],
+      ["module dynlibs", "00000000000006bb"],
+      ["module plugins", "00000000000006bb"]]]]],
+  ["Lean 4.28.0, commit 7e01a1bf5c70fc6167d49c345d3bf80596e9a79b",
+   "a96bc04a2e5e9630"],
+  ["/Users/ritinkardasbhaumik/EconLib/EconLib/Examples/PrisonersDilemma.lean",
+   "21c42906adea99f5"],
+  ["options", "00000000000006bb"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "6e70c12f07a6717c"}

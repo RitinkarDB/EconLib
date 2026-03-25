@@ -1,7 +1,4 @@
 import EconLib.Basic
 import EconLib.Equilibrium
-import EconLib.GameTheory 
-
-/-!
-Project root module. Re-export core definitions.
--/
+import EconLib.GameTheory
+import EconLib.Examples.PrisonersDilemma
