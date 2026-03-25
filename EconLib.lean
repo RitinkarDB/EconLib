@@ -1,5 +1,9 @@
-import EconLib.Basic
-import EconLib.Equilibrium
-import EconLib.GameTheory
-import EconLib.Choice
+import EconLib.Foundations.Basic
+import EconLib.Equilibrium.Basic
+import EconLib.GameTheory.Basic
+import Econlib.GameTheory.Dominance
+import EconLib.Choice.Basic
 import EconLib.Examples.PrisonersDilemma
+import EconLib.Examples.BattleOfTheSexes
+import EconLib.Examples.MatchingPennies
+import EconLib.Examples.StagHunt

@@ -1,4 +1,4 @@
-import EconLib.GameTheory
+import EconLib.GameTheory.Basic
 
 inductive PDPlayer
   | row

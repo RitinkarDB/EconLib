@@ -1,0 +1,30 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["9e590b1db56ce832.olean"],
+  "i": "95893578e0750ffb.ilean",
+  "c": "c17e3061522a9b94.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/Users/ritinkardasbhaumik/EconLib/.lake/packages/Cli/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/batteries/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/Qq/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/aesop/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/importGraph/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/plausible/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/packages/mathlib/.lake/build/lib/lean:/Users/ritinkardasbhaumik/EconLib/.lake/build/lib/lean /Users/ritinkardasbhaumik/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /Users/ritinkardasbhaumik/EconLib/EconLib/Choice/Basic.lean -o /Users/ritinkardasbhaumik/EconLib/.lake/build/lib/lean/EconLib/Choice/Basic.olean -i /Users/ritinkardasbhaumik/EconLib/.lake/build/lib/lean/EconLib/Choice/Basic.ilean -c /Users/ritinkardasbhaumik/EconLib/.lake/build/ir/EconLib/Choice/Basic.c --setup /Users/ritinkardasbhaumik/EconLib/.lake/build/ir/EconLib/Choice/Basic.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["EconLib.Choice.Basic:deps",
+   [["deps",
+     [["EconLib/EconLib:extraDep", [["@EconLib:extraDep", "00000000000006bb"]]],
+      ["imports",
+       [["EconLib.Equilibrium.Basic transitive imports (legacy)",
+         "e85d4e1b421ec880"],
+        ["EconLib.Equilibrium.Basic:importAllArts", "25bc7c2698cecd5b"]]]]],
+    ["libs",
+     [["import dynlibs", "00000000000006bb"],
+      ["package external libraries", "00000000000006bb"],
+      ["module dynlibs", "00000000000006bb"],
+      ["module plugins", "00000000000006bb"]]]]],
+  ["Lean 4.28.0, commit 7e01a1bf5c70fc6167d49c345d3bf80596e9a79b",
+   "a96bc04a2e5e9630"],
+  ["/Users/ritinkardasbhaumik/EconLib/EconLib/Choice/Basic.lean",
+   "6ec5c2e48fa1bca8"],
+  ["options", "00000000000006bb"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "3eae5eaeb5343a8e"}
