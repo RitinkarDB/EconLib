@@ -1,4 +1,4 @@
-import EconLib.GameTheory.Basic
+import EconLib.GameTheory.Basic 
 import Mathlib
 
 inductive SHPlayer
@@ -46,6 +46,16 @@ def hareHare : SH.Profile :=
   | row => hare
   | col => hare
 
+def stagHare : SH.Profile :=
+  fun
+  | row => stag
+  | col => hare
+
+def hareStag : SH.Profile :=
+  fun
+  | row => hare
+  | col => stag
+
 theorem stagStag_is_pureNash :
     SH.IsPureNash stagStag := by
   intro i x
@@ -60,6 +70,101 @@ theorem hareHare_is_pureNash :
   cases i <;> cases x <;>
     simp [hareHare, SH, SHUtility,
       UtilityModel.deviate, EconModel.deviate]
+
+theorem stagHare_not_pureNash :
+    ¬ SH.IsPureNash stagHare := by
+  intro h
+  have h₁ := h row hare
+  simp [stagHare, SH, SHUtility,
+    UtilityModel.deviate, EconModel.deviate] at h₁
+  linarith
+
+theorem hareStag_not_pureNash :
+    ¬ SH.IsPureNash hareStag := by
+  intro h
+  have h₁ := h col hare
+  simp [hareStag, SH, SHUtility,
+    UtilityModel.deviate, EconModel.deviate] at h₁
+  linarith
+
+lemma sigma_eq_stagStag
+    (σ : SH.Profile)
+    (hrow : σ row = stag)
+    (hcol : σ col = stag) :
+    σ = stagStag := by
+  funext i
+  cases i <;> assumption
+
+lemma sigma_eq_stagHare
+    (σ : SH.Profile)
+    (hrow : σ row = stag)
+    (hcol : σ col = hare) :
+    σ = stagHare := by
+  funext i
+  cases i <;> assumption
+
+lemma sigma_eq_hareStag
+    (σ : SH.Profile)
+    (hrow : σ row = hare)
+    (hcol : σ col = stag) :
+    σ = hareStag := by
+  funext i
+  cases i <;> assumption
+
+lemma sigma_eq_hareHare
+    (σ : SH.Profile)
+    (hrow : σ row = hare)
+    (hcol : σ col = hare) :
+    σ = hareHare := by
+  funext i
+  cases i <;> assumption
+
+theorem isPureNash_iff
+    (σ : SH.Profile) :
+    SH.IsPureNash σ ↔ σ = stagStag ∨ σ = hareHare := by
+  cases hrow : σ row <;> cases hcol : σ col
+  · constructor
+    · intro _
+      left
+      exact sigma_eq_stagStag σ hrow hcol
+    · intro h
+      rcases h with hss | hhh
+      · subst hss
+        exact stagStag_is_pureNash
+      · subst hhh
+        simp [hareHare] at hrow
+  · constructor
+    · intro h
+      have hσ : σ = stagHare := sigma_eq_stagHare σ hrow hcol
+      subst hσ
+      exact False.elim (stagHare_not_pureNash h)
+    · intro h
+      rcases h with hss | hhh
+      · subst hss
+        simp [stagStag] at hcol
+      · subst hhh
+        simp [hareHare] at hrow
+  · constructor
+    · intro h
+      have hσ : σ = hareStag := sigma_eq_hareStag σ hrow hcol
+      subst hσ
+      exact False.elim (hareStag_not_pureNash h)
+    · intro h
+      rcases h with hss | hhh
+      · subst hss
+        simp [stagStag] at hrow
+      · subst hhh
+        simp [hareHare] at hcol
+  · constructor
+    · intro _
+      right
+      exact sigma_eq_hareHare σ hrow hcol
+    · intro h
+      rcases h with hss | hhh
+      · subst hss
+        simp [stagStag] at hrow
+      · subst hhh
+        exact hareHare_is_pureNash
 
 theorem stagStag_is_equilibrium :
     SH.IsEquilibrium SH.unconstrainedFeasible stagStag := by
